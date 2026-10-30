@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arbitration Seat Judgments</title>
+<meta name="description" content="Content analysis of Supreme Court of India judgments on the seat and venue of arbitration, 1 September 2021 to 31 August 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#fbfaf7;--surface:#ffffff;--ink:#141413;--ink-2:#52514e;--ink-3:#7a7974;--rule:#e4e2dc;
+  --accent:#2a78d6;--accent-soft:#a9c8ef;--alt:#eb6834;--chip:#f1efe9;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#151514;--surface:#1d1d1b;--ink:#f0efec;--ink-2:#c3c2b7;--ink-3:#97968e;--rule:#33322f;
+    --accent:#3987e5;--accent-soft:#2c4e78;--alt:#d95926;--chip:#262624;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#151514;--surface:#1d1d1b;--ink:#f0efec;--ink-2:#c3c2b7;--ink-3:#97968e;--rule:#33322f;
+  --accent:#3987e5;--accent-soft:#2c4e78;--alt:#d95926;--chip:#262624;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:48px 16px 80px}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.2;margin:0}
+h1{font-size:clamp(28px,4.6vw,44px);letter-spacing:-.01em;max-width:22ch}
+h2{font-size:26px;margin:64px 0 8px}
+h3{font-size:19px;margin:0 0 6px}
+p{margin:0 0 14px;max-width:72ch}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.lede{font-size:18px;color:var(--ink-2);margin-top:16px;max-width:64ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;font-size:14px;color:var(--ink-3)}
+.meta a{color:var(--ink-2)}
+a{color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden;margin-top:36px}
+.stat{background:var(--surface);padding:18px 20px}
+.stat b{display:block;font:600 34px/1.1 "Source Serif 4",Georgia,serif}
+.stat span{font-size:14px;color:var(--ink-2)}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:22px 22px 18px;margin-top:20px}
+.card .sub{font-size:14px;color:var(--ink-2);margin:2px 0 18px}
+.note{font-size:13px;color:var(--ink-3);margin-top:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+/* vertical bars */
+.vbars{display:flex;align-items:flex-end;gap:14px;height:220px;border-bottom:1px solid var(--rule);padding-top:22px}
+.vcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;position:relative}
+.vpair{display:flex;gap:2px;align-items:flex-end;height:100%;width:100%;justify-content:center}
+.vbar{width:100%;max-width:56px;background:var(--accent);border-radius:4px 4px 0 0;position:relative;min-height:0;cursor:default}
+.vbar.alt{background:var(--alt)}
+.vpair .vbar{max-width:30px}
+.vbar .v{position:absolute;top:-21px;left:50%;transform:translateX(-50%);font-size:13px;color:var(--ink)}
+.vbar.zero{background:none}
+.xlab{display:flex;gap:14px;margin-top:6px}
+.xlab span{flex:1;text-align:center;font-size:13px;color:var(--ink-2)}
+.legend{display:flex;gap:16px;font-size:13px;color:var(--ink-2);margin-bottom:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+/* horizontal bars */
+.hrow{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:12px;align-items:center;margin:9px 0;font-size:14px}
+.hrow .lab{color:var(--ink-2);text-align:right}
+.htrack{display:flex;align-items:center;gap:8px}
+.hbar{height:18px;background:var(--accent-soft);border-radius:0 4px 4px 0}
+.hbar.key{background:var(--accent)}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:13px;line-height:1.4;padding:8px 10px;border-radius:6px;max-width:280px;opacity:0;transition:opacity .12s;z-index:10}
+/* timeline */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+@media (max-width:860px){.phases{grid-template-columns:1fr}}
+.phase{border-top:3px solid var(--accent);padding-top:14px}
+.phase .yr{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.04em}
+.phase ul{margin:10px 0 0;padding:0;list-style:none}
+.phase li{font-size:14.5px;color:var(--ink-2);padding:10px 0;border-top:1px solid var(--rule)}
+.phase li b{color:var(--ink);font-weight:600}
+.findings{counter-reset:f;margin-top:20px;display:grid;gap:14px}
+.finding{display:grid;grid-template-columns:40px 1fr;gap:6px;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 6px}
+.finding:before{counter-increment:f;content:counter(f);font:600 26px/1 "Source Serif 4",Georgia,serif;color:var(--accent)}
+/* table */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 12px}
+.filters button{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--rule);background:var(--surface);color:var(--ink-2);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cases{display:grid;gap:12px}
+.case{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px 18px}
+.case .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px}
+.case h3{font-size:17px}
+.case .cit{font-size:13px;color:var(--ink-3)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.chip{font-size:12px;background:var(--chip);color:var(--ink-2);padding:3px 9px;border-radius:999px}
+.chip.ok{background:var(--accent);color:#fff}
+.chip.no{background:var(--alt);color:#fff}
+.case dl{display:grid;grid-template-columns:80px 1fr;gap:4px 12px;margin:0;font-size:14px}
+.case dt{color:var(--ink-3)}
+.case dd{margin:0;color:var(--ink-2)}
+@media (max-width:520px){.case dl{grid-template-columns:1fr}.case dt{margin-top:6px}}
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">AI-assisted content analysis of judgments</div>
+  <h1>Seat and venue of arbitration in the Supreme Court of India, 2021 to 2026</h1>
+  <p class="lede">Ten reasoned judgments, decided between 1 September 2021 and 31 August 2026, on one question: where is an arbitration legally seated, and so which court supervises it? We read and coded each one and traced how the Court's answer has changed.</p>
+  <div class="meta"><span>Team Seat and Venue</span><span>Ishtarth H R · Division D</span><a href="https://github.com/ishtarthh/arbitration-seat-judgments">GitHub repository</a><a href="data.csv">data.csv</a><a href="data.xlsx">data.xlsx</a><a href="https://github.com/ishtarthh/arbitration-seat-judgments#readme">README</a></div>
+
+  <div class="stats" id="stats"></div>
+
+  <h2>What the data shows</h2>
+  <p>Three charts from the coded Data sheet. Hover a bar for the cases behind it.</p>
+
+  <div class="card">
+    <h3>1. Judgments per year</h3>
+    <div class="sub">2021 covers September to December only; 2026 covers January to August only.</div>
+    <div id="c1"></div>
+    <p class="note">No reasoned judgment on the seat question turned up for 2023. Output rises after Arif Azim (November 2024): six of the ten judgments come after it.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>2. Outcome by year</h3>
+      <div class="sub">Allowed means the party who came to the Supreme Court succeeded.</div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>Allowed</span><span><i style="background:var(--alt)"></i>Dismissed</span></div>
+      <div id="c2"></div>
+      <p class="note">An even 5 to 5 split. The result follows the wording of the clause, not who is appealing.</p>
+    </div>
+    <div class="card">
+      <h3>3. Precedent chiefly relied on</h3>
+      <div class="sub">The one earlier case each judgment leaned on most.</div>
+      <div id="c3"></div>
+      <p class="note">BGS SGS Soma (2019) is the main anchor, and Arif Azim (2024) is now a precedent in its own right.</p>
+    </div>
+  </div>
+
+  <h2>How the doctrine moved</h2>
+  <p>Read in date order, the ten judgments fall into three phases. The coding behind this is in the Issue and Holding columns of the dataset.</p>
+  <div class="phases">
+    <div class="phase"><div class="yr">2022 · HOLDING THE LINE AFTER BGS SOMA</div>
+      <ul>
+        <li><b>Ravi Ranjan:</b> a clause on where the tribunal "sits" names a venue, not a seat. A High Court with no territorial link cannot appoint, and consent cannot cure that.</li>
+        <li><b>BBR (India):</b> a seat fixed by the tribunal under s 20(2) is static. Moving the hearings moves only the venue.</li>
+        <li><b>Mahakali Foods:</b> for MSME suppliers, the MSMED Act displaces the contractual forum altogether.</li>
+      </ul></div>
+    <div class="phase"><div class="yr">2024 TO 2025 · ARIF AZIM AND THE CROSS-BORDER CASES</div>
+      <ul>
+        <li><b>Arif Azim (3 judges):</b> one named venue, plus chosen curial rules and nothing pointing the other way, is the seat. Dubai, so no Part I.</li>
+        <li><b>Disortho:</b> the same method in the other direction. Bogota was never chosen as seat, Indian law governs the arbitration agreement, so Indian courts appoint.</li>
+        <li><b>Balaji Steel:</b> "will take place in Benin" makes Benin the seat. Later contracts do not reopen it.</li>
+        <li><b>Activitas:</b> where the clause is silent, an exclusive jurisdiction clause fixes the seat.</li>
+        <li><b>Harcharan Dass Gupta:</b> the statute again overrides an agreed seat for MSME suppliers.</li>
+      </ul></div>
+    <div class="phase"><div class="yr">2026 · CONSOLIDATION</div>
+      <ul>
+        <li><b>J&amp;K ERA v Rash Builders:</b> sets out the principles. The seat comes from the agreement and stays fixed. Hearings elsewhere, or a different place recited in the award, do not move it.</li>
+        <li><b>Bhartia Infra:</b> twin seats plus an exclusive jurisdiction clause. The jurisdiction clause decides, and Arif Azim's forum non conveniens route is not needed.</li>
+      </ul></div>
+  </div>
+
+  <h2>Trends</h2>
+  <div class="findings">
+    <div class="finding"><div><h3>From labels to the whole agreement</h3><p>In 2022 the Court mostly policed the words "seat" and "venue". From 2024 it reads the whole contract (governing law, curial rules, jurisdiction clauses) to find what the parties meant. The word used in the clause now matters less than the agreement as a whole.</p></div></div>
+    <div class="finding"><div><h3>Exclusive jurisdiction clauses now act as seat clauses</h3><p>Two of the last four judgments (Activitas 2025, Bhartia 2026) treat an exclusive jurisdiction clause as identifying the seat. This continues the Brahmani River Pellets and Indus Mobile line and is now the main tool for clauses that name no seat, or name two.</p></div></div>
+    <div class="finding"><div><h3>A new anchor precedent</h3><p>BGS SGS Soma is the case leaned on most (2022, 2024, 2026). Arif Azim, itself built on BGS Soma, became the lead authority within months and is the main precedent in two later judgments. Chart 3 shows this shift.</p></div></div>
+    <div class="finding"><div><h3>No thumb on the scale</h3><p>Five appeals or petitions succeeded and five failed. The Court sent cross-border disputes abroad as readily as it kept them in India (Arif Azim and Balaji out, Disortho in). That fits the territorial approach of BALCO more than a pro-India or pro-appellant tendency.</p></div></div>
+    <div class="finding"><div><h3>Statute beats party autonomy in one field</h3><p>The only cases where the parties' chosen forum lost outright are the MSMED Act cases (Mahakali Foods, Harcharan Dass Gupta). Everywhere else the parties' choice, once found, controls.</p></div></div>
+  </div>
+
+  <h2>The ten judgments</h2>
+  <div class="filters" id="filters"></div>
+  <div class="cases" id="cases"></div>
+
+  <h2>Method and limits</h2>
+  <p>Court: Supreme Court of India. Window: 1 September 2021 to 31 August 2026. Included: reasoned judgments or reasoned orders that decide where an arbitration is seated, or which court or forum has territorial control over it because of the seat. Excluded: orders without reasons, decisions outside the window and cases on other jurisdiction questions (for example s 29A extensions or limitation). Each judgment was coded once against the Dataset template. Pick-list values follow the template's vocabularies. "Company" includes partnership and proprietorship firms.</p>
+  <p>Ten judgments cannot show a statistical trend. The counts describe this set only. Two judgments decided just after the window, Mahanadi Coalfields (23 September 2026) and ARCIS Clean Energy (12 October 2026), follow the same line but are not counted.</p>
+
+  <footer>Data: data.xlsx and data.csv in this repository. Links in the cards point to the Supreme Court's own copies where we could locate them. Built for the Option 2 assignment, Symbiosis Law School.</footer>
+</div>
+<div class="tip" id="tip"></div>
+<script>
+const DATA = [{"n": 1, "name": "Ravi Ranjan Developers Pvt. Ltd. v. Aditya Kumar Chatterjee", "cit": "Civil Appeal arising out of SLP (C) Nos. 17397-17398 of 2021", "date": "24-03-2022", "year": 2022, "bench": 2, "type": "Civil appeal", "by": "Company", "out": "Allowed", "won": "Company", "prov": "s 11(6) A&C Act", "issue": "Whether the Calcutta High Court could appoint an arbitrator only because the clause said the tribunal would sit at Kolkata.", "hold": "No. Kolkata was only a venue for sittings, not the seat; the High Court had no territorial jurisdiction and consent could not give it one.", "prec": "Mankastu Impex Pvt. Ltd. v. Airvisual Ltd.", "link": "https://api.sci.gov.in/supremecourt/2021/25981/25981_2021_8_2_34326_Order_24-Mar-2022.pdf", "strand": "Venue is not seat"}, {"n": 2, "name": "BBR (India) Pvt. Ltd. v. S.P. Singla Constructions Pvt. Ltd.", "cit": "Civil Appeal Nos. 4130-4131 of 2022", "date": "18-05-2022", "year": 2022, "bench": 2, "type": "Civil appeal", "by": "Company", "out": "Dismissed", "won": "Company", "prov": "s 20(2) A&C Act", "issue": "Whether the seat fixed at Panchkula by the first arbitrator moved to Delhi when the substitute arbitrator held hearings there.", "hold": "No. A seat fixed by the tribunal under s 20(2) stays fixed; later hearings in Delhi were only a change of venue, so the Panchkula courts kept jurisdiction.", "prec": "BGS SGS Soma JV v. NHPC Ltd.", "link": "https://indiankanoon.org/doc/123683542/", "strand": "Seat stays fixed"}, {"n": 3, "name": "Gujarat State Civil Supplies Corporation Ltd. v. Mahakali Foods Pvt. Ltd. (Unit 2)", "cit": "Civil Appeal arising out of SLP (C) No. 12884 of 2020 (with connected appeals)", "date": "31-10-2022", "year": 2022, "bench": 2, "type": "Civil appeal", "by": "State or public body", "out": "Dismissed", "won": "Company", "prov": "s 18 MSMED Act", "issue": "Whether a private arbitration agreement stops an MSME supplier from taking the dispute to the Facilitation Council under s 18.", "hold": "No. Chapter V of the MSMED Act overrides the A&C Act and the contract; the Council may conciliate and then arbitrate itself.", "prec": "Silpi Industries v. Kerala SRTC", "link": "https://api.sci.gov.in/supremecourt/2020/21518/21518_2020_1_1503_39396_Judgement_31-Oct-2022.pdf", "strand": "Statute overrides seat clause"}, {"n": 4, "name": "Arif Azim Co. Ltd. v. Micromax Informatics FZE", "cit": "2024 INSC 850", "date": "07-11-2024", "year": 2024, "bench": 3, "type": "Other", "by": "Company", "out": "Dismissed", "won": "Company", "prov": "s 2(2) A&C Act", "issue": "Whether Dubai, called the 'venue' in the clause, was really the seat, which would bar an Indian court from appointing under s 11(6).", "hold": "Yes. A single named venue with UAE rules and no contrary sign is the seat; Part I does not apply, so the petition failed.", "prec": "BGS SGS Soma JV v. NHPC Ltd.", "link": "https://api.sci.gov.in/supremecourt/2023/16417/16417_2023_1_1504_57037_Judgement_07-Nov-2024.pdf", "strand": "Named venue read as seat"}, {"n": 5, "name": "Disortho S.A.S. v. Meril Life Sciences Pvt. Ltd.", "cit": "2025 INSC 352", "date": "18-03-2025", "year": 2025, "bench": 3, "type": "Other", "by": "Company", "out": "Allowed", "won": "Company", "prov": "s 11(6) A&C Act", "issue": "Whether Indian courts can appoint when one clause chooses Indian law and Gujarat courts and another sends arbitration to a Bogota centre.", "hold": "Yes. Indian law governs the arbitration agreement, Bogota was not chosen as the seat, so Part I applies; a sole arbitrator was appointed.", "prec": "Arif Azim Co. Ltd. v. Micromax Informatics FZE", "link": "https://api.sci.gov.in/supremecourt/2023/29296/29296_2023_1_1501_60293_Judgement_18-Mar-2025.pdf", "strand": "Governing law decides"}, {"n": 6, "name": "M/s Harcharan Dass Gupta v. Union of India", "cit": "2025 INSC 689", "date": "14-05-2025", "year": 2025, "bench": 2, "type": "Civil appeal", "by": "Company", "out": "Allowed", "won": "Company", "prov": "s 18(4) MSMED Act", "issue": "Whether a Bengaluru seat clause defeats a Delhi MSME supplier's reference by the Delhi Facilitation Council to the Delhi Arbitration Centre.", "hold": "No. The MSMED Act overrides the agreed seat; the Council where the supplier is located has jurisdiction, and the arbitration was restored.", "prec": "Gujarat State Civil Supplies Corp. v. Mahakali Foods", "link": "https://api.sci.gov.in/supremecourt/2024/33751/33751_2024_9_1501_61700_Judgement_14-May-2025.pdf", "strand": "Statute overrides seat clause"}, {"n": 7, "name": "M/s Activitas Management Advisor Pvt. Ltd. v. Mind Plus Healthcare Pvt. Ltd.", "cit": "Civil Appeal arising out of SLP (C) No. 27714 of 2024", "date": "05-08-2025", "year": 2025, "bench": 2, "type": "Civil appeal", "by": "Company", "out": "Allowed", "won": "Company", "prov": "s 11(6) A&C Act", "issue": "Whether a clause giving exclusive jurisdiction to Mumbai courts fixes the seat when the arbitration clause names no seat or venue.", "hold": "Yes. Read in the context of arbitration, the clause makes Mumbai the seat, so only the Bombay High Court could hear the s 11 application.", "prec": "Brahmani River Pellets Ltd. v. Kamachi Industries Ltd.", "link": "https://api.sci.gov.in/supremecourt/2024/52824/52824_2024_6_19_63017_Order_05-Aug-2025.pdf", "strand": "Jurisdiction clause read as seat"}, {"n": 8, "name": "Balaji Steel Trade v. Fludor Benin S.A.", "cit": "2025 INSC 1342", "date": "21-11-2025", "year": 2025, "bench": 2, "type": "Other", "by": "Company", "out": "Dismissed", "won": "Company", "prov": "s 2(2) A&C Act", "issue": "Whether the Supreme Court can appoint an arbitrator for a composite reference when the master agreement says arbitration will take place in Benin.", "hold": "No. Benin is the seat and Part I does not apply; the later sale contracts did not replace the master agreement, and the petitioner was estopped.", "prec": "Bharat Aluminium Co. v. Kaiser Aluminium (BALCO)", "link": "https://api.sci.gov.in/supremecourt/2023/34759/34759_2023_7_1501_66083_Judgement_21-Nov-2025.pdf", "strand": "Named place read as seat"}, {"n": 9, "name": "J&K Economic Reconstruction Agency v. Rash Builders India Pvt. Ltd.", "cit": "2026 INSC 368", "date": "15-04-2026", "year": 2026, "bench": 2, "type": "Civil appeal", "by": "State or public body", "out": "Allowed", "won": "State or public body", "prov": "s 34 J&K A&C Act 1997", "issue": "Whether Delhi or Srinagar courts hear the award challenge when the agreed seat was Srinagar but hearings and the award took place in Delhi.", "hold": "Srinagar. The seat is fixed by agreement and stays fixed; the venue and a recital in the award do not move it. The s 34 petition was restored.", "prec": "BGS SGS Soma JV v. NHPC Ltd.", "link": "https://api.sci.gov.in/supremecourt/2025/44792/44792_2025_6_1501_70119_Judgement_15-Apr-2026.pdf", "strand": "Seat stays fixed"}, {"n": 10, "name": "Bhartia Infra Projects Ltd. v. M/s Vishwa Samudra Engineering Pvt. Ltd.", "cit": "SLP (C) Nos. 19870-19871 of 2026", "date": "15-06-2026", "year": 2026, "bench": 2, "type": "SLP", "by": "Company", "out": "Dismissed", "won": "Company", "prov": "s 11(6) A&C Act", "issue": "Which High Court can appoint when the clause names Hyderabad or Guwahati as seat but gives Hyderabad courts exclusive jurisdiction.", "hold": "Telangana High Court. The exclusive jurisdiction sentence settles the seat, so Arif Azim's forum non conveniens test for multiple seats is not needed.", "prec": "Arif Azim Co. Ltd. v. Micromax Informatics FZE", "link": "https://indiankanoon.org/doc/30651230/", "strand": "Jurisdiction clause read as seat"}];
+const tip=document.getElementById('tip');
+function bindTip(el,text){
+  el.addEventListener('mousemove',e=>{tip.innerHTML=text;tip.style.opacity=1;
+    const x=Math.min(e.clientX+14,window.innerWidth-300);tip.style.left=x+'px';tip.style.top=(e.clientY+14)+'px';});
+  el.addEventListener('mouseleave',()=>tip.style.opacity=0);
+}
+const short=n=>n.split(' v. ')[0].replace(/^M\/s /,'').replace(/ (Pvt\.|Private) Ltd\.| Co\. Ltd\.| Ltd\.| S\.A\.S\.| Corporation/g,'');
+const years=[2021,2022,2023,2024,2025,2026];
+// stats
+const allowed=DATA.filter(d=>d.out==='Allowed').length;
+const first=DATA.filter(d=>d.type==='Other').length;
+const comp=DATA.filter(d=>d.won==='Company').length;
+document.getElementById('stats').innerHTML=[
+ [DATA.length,'reasoned judgments coded'],
+ [allowed+' / '+(DATA.length-allowed),'allowed / dismissed'],
+ [first,'heard at first instance (international s 11 petitions)'],
+ [comp+' of '+DATA.length,'won by a company']].map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join('');
+// chart 1
+(function(){
+  const max=4;const c=document.getElementById('c1');
+  const cols=years.map(y=>{const cs=DATA.filter(d=>d.year===y);const h=cs.length/max*100;
+    return `<div class="vcol"><div class="vbar ${cs.length?'':'zero'}" data-y="${y}" style="height:${h}%"><span class="v">${cs.length}</span></div></div>`}).join('');
+  c.innerHTML=`<div class="vbars">${cols}</div><div class="xlab">${years.map(y=>`<span>${y}</span>`).join('')}</div>`;
+  c.querySelectorAll('.vbar').forEach(b=>{const y=+b.dataset.y;const cs=DATA.filter(d=>d.year===y);
+    bindTip(b,`<b>${y}: ${cs.length}</b>`+(cs.length?'<br>'+cs.map(d=>short(d.name)).join('<br>'):''));});
+})();
+// chart 2
+(function(){
+  const max=3;const c=document.getElementById('c2');
+  const cols=years.map(y=>{const a=DATA.filter(d=>d.year===y&&d.out==='Allowed'),r=DATA.filter(d=>d.year===y&&d.out==='Dismissed');
+    const bar=(arr,cls,lab)=>`<div class="vbar ${cls} ${arr.length?'':'zero'}" data-y="${y}" data-o="${lab}" style="height:${arr.length/max*100}%">${arr.length?`<span class="v">${arr.length}</span>`:''}</div>`;
+    return `<div class="vcol"><div class="vpair">${bar(a,'','Allowed')}${bar(r,'alt','Dismissed')}</div></div>`}).join('');
+  c.innerHTML=`<div class="vbars" style="height:190px">${cols}</div><div class="xlab">${years.map(y=>`<span>${y}</span>`).join('')}</div>`;
+  c.querySelectorAll('.vbar').forEach(b=>{const cs=DATA.filter(d=>d.year===+b.dataset.y&&d.out===b.dataset.o);
+    if(cs.length) bindTip(b,`<b>${b.dataset.o}, ${b.dataset.y}</b><br>`+cs.map(d=>short(d.name)).join('<br>'));});
+})();
+// chart 3
+(function(){
+  const lab={'BGS SGS Soma JV v. NHPC Ltd.':'BGS SGS Soma (2019)','Arif Azim Co. Ltd. v. Micromax Informatics FZE':'Arif Azim (2024)',
+   'Mankastu Impex Pvt. Ltd. v. Airvisual Ltd.':'Mankastu Impex (2020)','Silpi Industries v. Kerala SRTC':'Silpi Industries (2021)',
+   'Gujarat State Civil Supplies Corp. v. Mahakali Foods':'Mahakali Foods (2022)','Brahmani River Pellets Ltd. v. Kamachi Industries Ltd.':'Brahmani River Pellets (2019)',
+   'Bharat Aluminium Co. v. Kaiser Aluminium (BALCO)':'BALCO (2012)'};
+  const cnt={};DATA.forEach(d=>cnt[d.prec]=(cnt[d.prec]||0)+1);
+  const items=Object.entries(cnt).sort((a,b)=>b[1]-a[1]||lab[a[0]].localeCompare(lab[b[0]]));
+  const c=document.getElementById('c3');
+  c.innerHTML=items.map(([k,v])=>`<div class="hrow"><div class="lab">${lab[k]}</div><div class="htrack"><div class="hbar ${v>1?'key':''}" data-k="${k}" style="width:${v/3*85}%"></div><span>${v}</span></div></div>`).join('');
+  c.querySelectorAll('.hbar').forEach(b=>{const cs=DATA.filter(d=>d.prec===b.dataset.k);bindTip(b,'<b>Relied on in</b><br>'+cs.map(d=>short(d.name)+' ('+d.year+')').join('<br>'));});
+})();
+// cases
+const esc=s=>String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+function render(f){
+  document.getElementById('cases').innerHTML=DATA.filter(d=>f==='All'||d.out===f||String(d.year)===f).map(d=>`
+  <article class="case"><div class="top"><h3>${d.n}. ${esc(d.name)}</h3><span class="cit">${esc(d.cit)} · ${d.date}</span></div>
+  <div class="chips"><span class="chip ${d.out==='Allowed'?'ok':'no'}">${d.out}</span><span class="chip">${d.type}</span><span class="chip">${d.bench} judges</span><span class="chip">${esc(d.prov)}</span><span class="chip">${esc(d.strand)}</span></div>
+  <dl><dt>Issue</dt><dd>${esc(d.issue)}</dd><dt>Holding</dt><dd>${esc(d.hold)}</dd><dt>Relied on</dt><dd>${esc(d.prec)}</dd><dt>Source</dt><dd><a href="${d.link}" target="_blank" rel="noopener">Judgment copy</a></dd></dl></article>`).join('');
+}
+const opts=['All','Allowed','Dismissed','2022','2024','2025','2026'];
+const fb=document.getElementById('filters');
+fb.innerHTML=opts.map(o=>`<button aria-pressed="${o==='All'}" data-f="${o}">${o}</button>`).join('');
+fb.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  fb.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));render(b.dataset.f);});
+render('All');
+</script>
+</body>
+</html>
