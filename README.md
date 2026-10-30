@@ -6,7 +6,9 @@ Analysis page: https://ishtarthh.github.io/arbitration-seat-judgments/ · Data: 
 
 Team Seat and Venue
 
-- Ishtarth H R, Division D
+- Ishtarth H R, Division D, PRN 23010422103
+- Palak Manik, Division D, PRN 23010422121
+- Swasti Sharma, Division D, PRN 23010422141
 
 ## Topic
 
